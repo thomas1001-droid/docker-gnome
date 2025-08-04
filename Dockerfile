@@ -2,6 +2,7 @@ FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV DISPLAY=:1
+ENV WEBKIT_DISABLE_SANDBOX=1
 
 RUN useradd -ms /bin/bash browseruser
 
