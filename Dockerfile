@@ -5,16 +5,20 @@ ENV DISPLAY=:1
 
 RUN apt update && apt install -y \
     epiphany-browser \
-    dbus-x11 \
     x11vnc \
     xvfb \
     supervisor \
-    fluxbox \
     wget \
+    net-tools \
+    git \
+    novnc \
+    websockify \
     && apt clean
 
+# Copier le fichier supervisord.conf
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-EXPOSE 5900
+# Exposer le port noVNC
+EXPOSE 6080
 
 CMD ["/usr/bin/supervisord"]
