@@ -5,6 +5,7 @@ ENV DISPLAY=:1
 
 RUN apt update && apt install -y \
     epiphany-browser \
+    fluxbox \
     x11vnc \
     xvfb \
     supervisor \
