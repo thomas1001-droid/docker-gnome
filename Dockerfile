@@ -3,7 +3,11 @@ FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 ENV DISPLAY=:1
 
-RUN apt update && apt install -y \
+RUN apt update && \
+    apt install -y software-properties-common && \
+    add-apt-repository universe && \
+    apt update && \
+    apt install -y \
     epiphany-browser \
     fluxbox \
     x11vnc \
@@ -13,8 +17,8 @@ RUN apt update && apt install -y \
     net-tools \
     git \
     novnc \
-    websockify \
-    && apt clean
+    websockify && \
+    apt clean
 
 # Copier le fichier supervisord.conf
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
