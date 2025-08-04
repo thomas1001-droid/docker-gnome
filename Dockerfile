@@ -14,6 +14,7 @@ RUN apt update && \
     apt update && \
     apt install -y \
     epiphany-browser \
+    xdg-dbus-proxy \
     dbus-x11 \
     fluxbox \
     x11vnc \
