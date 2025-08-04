@@ -33,6 +33,8 @@ RUN usermod -aG video,audio browseruser
 # Propriétaire du home (utile si volume monté ou logs)
 RUN chown -R browseruser:browseruser /home/browseruser
 
+RUN chmod u+s /usr/bin/bwrap
+
 # Copie du fichier supervisord
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
